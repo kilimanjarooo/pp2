@@ -1,1 +1,0 @@
-print('test kbtu another pc')
