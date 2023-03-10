@@ -1,5 +1,8 @@
-from math import*
-a = int(input())
-b = int(input())
+import time
+import math
 
-print("Square root of", a, "after", b, "miliseconds is", sqrt(a))
+num = float(input())
+milli = int(input())
+time.sleep(milli/1000)
+sqrt_num = math.sqrt(num)
+print(f"The square root of {num} after {milli} milliseconds is {sqrt_num}")
