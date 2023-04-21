@@ -10,8 +10,8 @@ clock = pg.time.Clock()
 y = 0
 ry = 2
 step, enemy_step, score, score_coin = 5, 5, 0, 0
-bg = pg.image.load("C:\\Users\\Lenovo\\OneDrive\\Рабочий стол\\PP II\\lab08\\racer\\img\\AnimatedStreet.png")
-game_over = pg.image.load("C:\\Users\\Lenovo\\OneDrive\\Рабочий стол\\PP II\\lab08\\racer\\img\\gameover.jpg")
+game_over = pg.image.load("gameover.jpg")
+bg = pg.image.load("AnimatedStreet.png")
 game_over = pg.transform.scale(game_over, (w, h))
 # задаем фонт для текста
 score_font = pg.font.SysFont("Verdana", 20)
@@ -20,14 +20,14 @@ score_coins = pg.font.SysFont("Verdana", 20)
 class Enemy(pg.sprite.Sprite):
     def __init__(self):
         super().__init__()
-        self.image = pg.image.load("C:\\Users\\Lenovo\\OneDrive\\Рабочий стол\\PP II\\lab08\\racer\\img\\Enemy.png") # загружаем картинку
+        self.image = pg.image.load("Enemy.png") # загружаем картинку
         self.rect = self.image.get_rect()
         self.rect.center = (random.randint(40, w - 40), 0) # задаем рандомные координаты
 
     def update(self):
         global score
         self.rect.move_ip(0, enemy_step) # движение этой машинки по оси у сверху вниз
-        if(self.rect.bottom > h): 
+        if(self.rect.bottom > h + 90): 
             score += 1 # добавляем 1 когда эта машинка проедет вниз и не столкнеться с игровой машинкой
             self.top = 0
             self.rect.center = (random.randint(30, 350), 0)
@@ -39,7 +39,7 @@ class Enemy(pg.sprite.Sprite):
 class Player(pg.sprite.Sprite):
     def __init__(self):
         super().__init__()
-        self.image = pg.image.load("C:\\Users\\Lenovo\\OneDrive\\Рабочий стол\\PP II\\lab08\\racer\\img\\Player.png") # загружаем картинку
+        self.image = pg.image.load("Player.png") # загружаем картинку
         self.rect = self.image.get_rect()
         self.rect.center = (160, 520)
 
@@ -67,7 +67,7 @@ class Player(pg.sprite.Sprite):
 class Coin(pg.sprite.Sprite):
     def __init__(self):
         super().__init__()
-        self.image = pg.image.load("C:\\Users\\Lenovo\\OneDrive\\Рабочий стол\\PP II\\lab08\\racer\\img\\coin.png") # загружаем картинку
+        self.image = pg.image.load("coin.png") # загружаем картинку
         self.rect = self.image.get_rect()
         self.rect.center = (random.randint(30, w - 30), random.randint(30, h - 130)) # рандомные координаты для монетки
 

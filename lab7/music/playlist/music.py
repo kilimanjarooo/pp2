@@ -66,5 +66,3 @@ while True:
 
     clock.tick(10)
     pygame.display.flip()
-
-pygame.quit()

@@ -1,4 +1,4 @@
-import pygame
+import pygame, sys
 pygame.init()
 
 screen = pygame.display.set_mode((400, 300))
@@ -7,10 +7,11 @@ clock = pygame.time.Clock()
 x = 47
 y = 47
 
-while done:
+while True:
         for event in pygame.event.get():
                 if event.type == pygame.QUIT:
-                      done = False
+                      pygame.quit()
+                      sys.exit()
 
         screen.fill((255, 255, 255))
 
@@ -22,6 +23,6 @@ while done:
 
         pygame.draw.circle(screen, 'red', (x, y), 25)
         pygame.display.flip()
-        clock.tick(60)
+        clock.tick(120)
 
 pygame.quit()

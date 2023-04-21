@@ -1,5 +1,4 @@
-import pygame
-import time
+import pygame, time, sys
 pygame.init()
 
 size = (800, 600)
@@ -31,3 +30,4 @@ while done:
     pygame.display.flip()
 
 pygame.quit()
+sys.exit()

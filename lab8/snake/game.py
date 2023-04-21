@@ -2,7 +2,7 @@ import pygame as pg
 from random import randint, randrange
 pg.init()
 
-w, h, fps, level, step = 800, 800, 4, 0, 40 # разделяем окно на 400 квадратиков, 20 на 20
+w, h, fps, level, step = 800, 800, 6, 0, 40 # разделяем окно на 400 квадратиков, 20 на 20
 screen = pg.display.set_mode((w, h))
 pg.display.set_caption('Snake Game')
 is_running, lose = True, False
